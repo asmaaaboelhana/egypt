@@ -1,0 +1,2194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EGYPT — Ancient Culture & Mythology</title>
+  <meta name="description"
+    content="An educational guide to ancient Egyptian culture, gods, myths, the afterlife, and the traditions that built one of history's greatest civilizations.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&display=swap"
+    rel="stylesheet">
+
+  <style>
+    /* ═══════════════════════════════════════════════════
+   EGYPT — Educational Guide  ·  Production CSS
+   ═══════════════════════════════════════════════════ */
+
+    /* ── Reset ────────────────────────────────────────── */
+    *,
+    *::before,
+    *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box
+    }
+
+    /* ── Tokens ───────────────────────────────────────── */
+    :root {
+      /* Palette: Ancient Stone, Soft Obsidian, & Gold */
+      --gold: #d4af37;
+      --gold-lt: #f9d878;
+      --gold-deep: #aa8c2c;
+      --gold-05: rgba(212, 175, 55, .05);
+      --gold-10: rgba(212, 175, 55, .10);
+      --gold-15: rgba(212, 175, 55, .15);
+      --gold-25: rgba(212, 175, 55, .25);
+
+      /* Lighter Dark Theme */
+      --obsidian: #1a1816;
+      /* Soft Black */
+      --charcoal: #24201d;
+      /* Warm Dark Grey */
+      --charcoal-lt: #2e2824;
+      /* Lighter Grey */
+
+      --stone: #e6e0d4;
+      /* Brighter text */
+      --stone-dim: #b8b2a8;
+      /* Lighter secondary */
+      --stone-dark: #6e6860;
+
+      --border: rgba(212, 175, 55, .25);
+      --border-subtle: rgba(212, 175, 55, .12);
+
+      --r: 14px;
+      --r-sm: 8px;
+      --r-pill: 50px;
+
+      /* Glows & Shadows */
+      --shadow: 0 4px 20px rgba(0, 0, 0, .25);
+      --shadow-md: 0 8px 32px rgba(0, 0, 0, .35);
+      --shadow-lg: 0 12px 48px rgba(0, 0, 0, .45);
+      --glow: 0 0 18px rgba(212, 175, 55, .18);
+    }
+
+    /* ── Base ─────────────────────────────────────────── */
+    html {
+      scroll-behavior: smooth;
+      -webkit-text-size-adjust: 100%
+    }
+
+    body {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      background-color: var(--obsidian);
+      background-image:
+        radial-gradient(circle at 15% 50%, rgba(20, 18, 16, 0.4) 0%, transparent 50%),
+        radial-gradient(circle at 85% 30%, rgba(40, 30, 20, 0.15) 0%, transparent 50%);
+      color: var(--stone);
+      line-height: 1.75;
+      font-size: 18px;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    img {
+      display: block;
+      max-width: 100%
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none
+    }
+
+    /* ── Scroll Progress ──────────────────────────────── */
+    .progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 3px;
+      width: 0%;
+      background: linear-gradient(90deg, var(--gold), var(--gold-lt), var(--gold));
+      z-index: 1000;
+      transition: width .12s linear;
+    }
+
+    /* ── Nav ──────────────────────────────────────────── */
+    /* ── Nav ──────────────────────────────────────────── */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.05rem 2.4rem;
+      background: rgba(14, 12, 11, .85);
+      backdrop-filter: blur(20px) saturate(1.1);
+      -webkit-backdrop-filter: blur(20px) saturate(1.1);
+      border-bottom: 1px solid var(--border-subtle);
+      transition: padding .3s, box-shadow .3s, background .3s;
+    }
+
+    nav.scrolled {
+      padding: .72rem 2.4rem;
+      box-shadow: var(--shadow)
+    }
+
+    .logo {
+      font-family: 'Cinzel', serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      letter-spacing: .22em;
+      display: flex;
+      align-items: center;
+      gap: .55rem;
+    }
+
+    .logo span {
+      color: var(--gold)
+    }
+
+    .logo-tag {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: .62rem;
+      letter-spacing: .14em;
+      color: var(--gold-lt);
+      background: var(--gold-10);
+      padding: .18rem .48rem;
+      border-radius: var(--r-pill);
+      font-weight: 500;
+      text-transform: uppercase;
+      border: 1px solid var(--gold-05);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.7rem;
+      list-style: none
+    }
+
+    .nav-links a {
+      font-family: 'Cinzel', serif;
+      font-size: .7rem;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: var(--stone-dim);
+      position: relative;
+      padding-bottom: 3px;
+      transition: color .3s;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--gold);
+      border-radius: 2px;
+      transition: width .32s;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--gold)
+    }
+
+    .nav-links a:hover::after,
+    .nav-links a.active::after {
+      width: 100%
+    }
+
+    /* hamburger */
+    .burger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 2px
+    }
+
+    .burger span {
+      display: block;
+      width: 23px;
+      height: 2px;
+      background: var(--gold);
+      border-radius: 2px;
+      transition: .28s
+    }
+
+    /* mobile overlay */
+    .mobile-nav {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 200;
+      background: rgba(14, 12, 11, .98);
+      backdrop-filter: blur(14px);
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1.3rem;
+    }
+
+    .mobile-nav.open {
+      display: flex
+    }
+
+    .mobile-nav a {
+      font-family: 'Cinzel', serif;
+      font-size: .95rem;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--stone);
+      transition: color .25s
+    }
+
+    .mobile-nav a:hover {
+      color: var(--gold)
+    }
+
+    .mobile-nav .close-btn {
+      position: absolute;
+      top: 1.1rem;
+      right: 1.4rem;
+      font-size: 1.5rem;
+      cursor: pointer;
+      background: none;
+      border: none;
+      color: var(--stone-dim)
+    }
+
+    /* ── Hero ─────────────────────────────────────────── */
+    .hero {
+      position: relative;
+      height: 100vh;
+      min-height: 580px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    /* gradient fallback when placeholder hasn't loaded */
+    .hero__bg {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, #0a0806 0%, #14100c 50%, #1c1612 100%);
+    }
+
+    .hero__bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.6;
+      mix-blend-mode: overlay;
+    }
+
+    .hero__veil {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background: linear-gradient(180deg,
+          rgba(14, 12, 11, .7) 0%,
+          rgba(14, 12, 11, .3) 40%,
+          rgba(14, 12, 11, .6) 80%,
+          var(--obsidian) 100%);
+    }
+
+    .hero__body {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding: 0 1.5rem;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .hero__chip {
+      display: inline-flex;
+      align-items: center;
+      gap: .45rem;
+      border: 1px solid rgba(201, 168, 76, .38);
+      border-radius: var(--r-pill);
+      padding: .3rem .9rem;
+      margin-bottom: 1.4rem;
+    }
+
+    .hero__chip-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--gold)
+    }
+
+    .hero__chip span {
+      font-family: 'Cinzel', serif;
+      font-size: .66rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--gold-lt)
+    }
+
+    .hero h1 {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(3rem, 8.5vw, 6.2rem);
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.04;
+      text-shadow: 0 2px 28px rgba(0, 0, 0, .4);
+    }
+
+    .hero__sub {
+      font-size: 1.25rem;
+      color: rgba(255, 255, 255, .68);
+      margin-top: .75rem;
+      font-weight: 300;
+      letter-spacing: .03em;
+    }
+
+    .hero__desc {
+      font-size: 1rem;
+      color: rgba(255, 255, 255, .5);
+      margin-top: .9rem;
+      max-width: 480px;
+      margin-left: auto;
+      margin-right: auto;
+      font-weight: 300;
+      line-height: 1.7;
+    }
+
+    /* scroll nudge */
+    .hero__nudge {
+      position: absolute;
+      bottom: 2.2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: .3rem;
+    }
+
+    .hero__nudge-label {
+      font-family: 'Cinzel', serif;
+      font-size: .56rem;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, .42)
+    }
+
+    .hero__nudge-line {
+      width: 1px;
+      height: 34px;
+      background: linear-gradient(180deg, var(--gold), transparent);
+      animation: nudge 2.2s infinite
+    }
+
+    @keyframes nudge {
+
+      0%,
+      100% {
+        opacity: .25;
+        transform: scaleY(.82)
+      }
+
+      50% {
+        opacity: 1;
+        transform: scaleY(1)
+      }
+    }
+
+    /* ── Layout helpers ───────────────────────────────── */
+    .wrap {
+      max-width: 1060px;
+      margin: 0 auto;
+      padding: 0 2rem
+    }
+
+    .section {
+      padding: 5.5rem 0
+    }
+
+    .section--white {
+      background: transparent;
+    }
+
+    .sec-label {
+      font-family: 'Cinzel', serif;
+      font-size: .67rem;
+      letter-spacing: .28em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 600;
+      margin-bottom: .55rem
+    }
+
+    .sec-title {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(1.75rem, 3.2vw, 2.45rem);
+      font-weight: 700;
+      color: var(--stone);
+      line-height: 1.2
+    }
+
+    .sec-desc {
+      font-size: 1.05rem;
+      color: var(--stone-dim);
+      max-width: 580px;
+      font-weight: 300;
+      margin-top: .7rem;
+      line-height: 1.7
+    }
+
+    .sec-head {
+      margin-bottom: 2.8rem
+    }
+
+    .sec-head--center {
+      text-align: center
+    }
+
+    .sec-head--center .sec-desc {
+      margin-left: auto;
+      margin-right: auto
+    }
+
+    .divider {
+      width: 38px;
+      height: 2px;
+      background: var(--gold);
+      border-radius: 2px;
+      margin-top: .9rem
+    }
+
+    .sec-head--center .divider {
+      margin-left: auto;
+      margin-right: auto
+    }
+
+    /* ── Table of Contents ────────────────────────────── */
+    .toc-wrap {
+      padding: 3rem 0
+    }
+
+    .toc {
+      background: rgba(20, 18, 16, 0.4);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 2rem 2.2rem;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+    }
+
+    .toc__head {
+      display: flex;
+      align-items: flex-start;
+      gap: .9rem;
+      margin-bottom: 1.5rem;
+      padding-bottom: 1.2rem;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .toc__head-icon {
+      font-size: 1.3rem;
+      line-height: 1.35
+    }
+
+    .toc__head h2 {
+      font-family: 'Cinzel', serif;
+      font-size: 1.15rem;
+      font-weight: 600
+    }
+
+    .toc__head p {
+      font-size: .9rem;
+      color: var(--stone-dim);
+      margin-top: .15rem;
+      font-weight: 300
+    }
+
+    .toc__list {
+      display: flex;
+      flex-direction: column
+    }
+
+    .toc__item {
+      display: flex;
+      align-items: center;
+      gap: .9rem;
+      padding: .72rem .85rem;
+      border-radius: var(--r-sm);
+      transition: background .22s;
+    }
+
+    .toc__item:hover {
+      background: var(--gold-05)
+    }
+
+    .toc__num {
+      font-family: 'Cinzel', serif;
+      font-size: .76rem;
+      font-weight: 700;
+      color: var(--gold);
+      min-width: 24px
+    }
+
+    .toc__dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--border-subtle);
+      flex-shrink: 0;
+      transition: background .22s
+    }
+
+    .toc__item:hover .toc__dot {
+      background: var(--gold)
+    }
+
+    .toc__info h4 {
+      font-family: 'Cinzel', serif;
+      font-size: .85rem;
+      font-weight: 600;
+      color: var(--stone)
+    }
+
+    .toc__info p {
+      font-size: .8rem;
+      color: var(--stone-dim);
+      font-weight: 300;
+      margin-top: .1rem
+    }
+
+    .toc__arrow {
+      margin-left: auto;
+      color: var(--stone-dark);
+      font-size: .95rem;
+      transition: transform .22s, color .22s
+    }
+
+    .toc__item:hover .toc__arrow {
+      transform: translateX(4px);
+      color: var(--gold)
+    }
+
+    /* ── Callout ──────────────────────────────────────── */
+    .callout {
+      display: flex;
+      gap: .85rem;
+      align-items: flex-start;
+      background: linear-gradient(135deg, var(--gold-10), var(--gold-05));
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--gold);
+      border-radius: var(--r-sm);
+      padding: 1rem 1.15rem;
+    }
+
+    .callout__icon {
+      font-size: 1.05rem;
+      flex-shrink: 0;
+      line-height: 1.3
+    }
+
+    .callout__body h4 {
+      font-family: 'Cinzel', serif;
+      font-size: .76rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 700
+    }
+
+    .callout__body p {
+      font-size: .9rem;
+      color: var(--ink-60);
+      margin-top: .2rem;
+      font-weight: 400;
+      line-height: 1.58
+    }
+
+    .callout__body strong {
+      color: var(--ink);
+      font-weight: 600
+    }
+
+    /* ── Intro section ────────────────────────────────── */
+    .intro-grid {
+      display: grid;
+      grid-template-columns: 1.25fr .85fr;
+      gap: 3rem;
+      align-items: start
+    }
+
+    .intro-text p {
+      color: var(--ink-60);
+      font-weight: 300;
+      margin-bottom: 1.1rem;
+      font-size: 1.03rem
+    }
+
+    .intro-text strong {
+      color: var(--ink);
+      font-weight: 600
+    }
+
+    .intro-text p {
+      color: var(--stone-dim);
+      font-weight: 300;
+      margin-bottom: 1.1rem;
+      font-size: 1.03rem
+    }
+
+    .intro-text strong {
+      color: var(--stone);
+      font-weight: 600
+    }
+
+    .intro-text em {
+      color: var(--gold);
+      font-style: italic
+    }
+
+    .sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 1.3rem
+    }
+
+    /* facts card */
+    .facts {
+      background: rgba(20, 18, 16, 0.4);
+      backdrop-filter: blur(10px);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      padding: 1.5rem;
+      box-shadow: var(--shadow);
+    }
+
+    .facts__head {
+      font-family: 'Cinzel', serif;
+      font-size: .74rem;
+      letter-spacing: .17em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 600;
+      margin-bottom: .85rem;
+      padding-bottom: .55rem;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .fact {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: .48rem 0;
+      border-bottom: 1px solid var(--border-subtle)
+    }
+
+    .fact:last-child {
+      border-bottom: none
+    }
+
+    .fact__lbl {
+      font-size: .88rem;
+      color: var(--stone-dim);
+      font-weight: 400
+    }
+
+    .fact__val {
+      font-family: 'Cinzel', serif;
+      font-size: .88rem;
+      font-weight: 700;
+      color: var(--stone)
+    }
+
+    /* ── God Cards ────────────────────────────────────── */
+    .gods {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.3rem
+    }
+
+    .god {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: transform .34s cubic-bezier(.22, 1, .36, 1), box-shadow .34s, border-color .3s;
+    }
+
+    .god:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--gold)
+    }
+
+    /* unique colour per card – fallback when img missing */
+    .god[data-id=ra] .god__img {
+      background: linear-gradient(140deg, #c9a84c, #9a7a38)
+    }
+
+    .god[data-id=osiris] .god__img {
+      background: linear-gradient(140deg, #4a8a62, #2d6b44)
+    }
+
+    .god[data-id=isis] .god__img {
+      background: linear-gradient(140deg, #8a6aad, #6b4d8a)
+    }
+
+    .god[data-id=anubis] .god__img {
+      background: linear-gradient(140deg, #5c5048, #3d332c)
+    }
+
+    .god[data-id=horus] .god__img {
+      background: linear-gradient(140deg, #4a7aad, #2d5c8a)
+    }
+
+    .god[data-id=thoth] .god__img {
+      background: linear-gradient(140deg, #4d8a8a, #2d6b6b)
+    }
+
+    .god__img {
+      position: relative;
+      aspect-ratio: 4/3;
+      overflow: hidden
+    }
+
+    .god__img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.5;
+      mix-blend-mode: normal;
+      /* Better for real images */
+    }
+
+    .god__overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: .4rem;
+    }
+
+    .god__symbol {
+      font-size: 2.1rem;
+      filter: drop-shadow(0 2px 5px rgba(0, 0, 0, .3))
+    }
+
+    .god__img-label {
+      font-family: 'Cinzel', serif;
+      font-size: .68rem;
+      letter-spacing: .24em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, .65)
+    }
+
+    .god__body {
+      padding: 1.2rem 1.3rem 1.4rem
+    }
+
+    .god__name {
+      font-family: 'Cinzel', serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--stone)
+    }
+
+    .god__role {
+      display: block;
+      margin-top: .22rem;
+      font-family: 'Cinzel', serif;
+      font-size: .76rem;
+      color: var(--gold);
+      font-weight: 600;
+      letter-spacing: .05em
+    }
+
+    .god__desc {
+      margin-top: .6rem;
+      font-size: .92rem;
+      color: var(--stone-dim);
+      font-weight: 300;
+      line-height: 1.58
+    }
+
+    /* toggle */
+    .god__toggle {
+      display: flex;
+      align-items: center;
+      gap: .42rem;
+      margin-top: .82rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-family: 'Cinzel', serif;
+      font-size: .72rem;
+      letter-spacing: .11em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 600;
+      padding: 0;
+      transition: gap .28s;
+    }
+
+    .god__toggle:hover {
+      gap: .6rem
+    }
+
+    .god__toggle .t-icon {
+      width: 21px;
+      height: 21px;
+      border-radius: 50%;
+      border: 1.5px solid var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: .82rem;
+      color: var(--gold);
+      line-height: 1;
+      transition: background .28s, color .28s, transform .3s;
+    }
+
+    .god.open .god__toggle .t-icon {
+      background: var(--gold);
+      color: #fff;
+      transform: rotate(45deg)
+    }
+
+    /* expandable */
+    .god__more {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height .42s cubic-bezier(.4, 0, .2, 1)
+    }
+
+    .god.open .god__more {
+      max-height: 260px
+    }
+
+    .god__more-inner {
+      padding-top: .9rem;
+      margin-top: .7rem;
+      border-top: 1px solid var(--border-subtle)
+    }
+
+    .god__more-inner h5 {
+      font-family: 'Cinzel', serif;
+      font-size: .7rem;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 600;
+      margin-top: .6rem
+    }
+
+    .god__more-inner h5:first-child {
+      margin-top: 0
+    }
+
+    .god__more-inner p {
+      font-size: .86rem;
+      color: var(--stone-dim);
+      margin-top: .2rem;
+      font-weight: 300;
+      line-height: 1.55
+    }
+
+    /* ── Myth Cards ───────────────────────────────────── */
+    .myths {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.3rem
+    }
+
+    .myth {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      padding: 1.7rem;
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+      transition: border-color .3s, transform .3s, box-shadow .3s;
+    }
+
+    .myth:hover {
+      border-color: var(--gold);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md)
+    }
+
+    .myth::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--gold), var(--gold-lt), var(--gold));
+      opacity: 0;
+      transition: opacity .3s
+    }
+
+    .myth:hover::before {
+      opacity: 1
+    }
+
+    .myth__num {
+      font-family: 'Cinzel', serif;
+      font-size: 2.1rem;
+      font-weight: 900;
+      color: var(--gold-15);
+      line-height: 1
+    }
+
+    .myth__title {
+      font-family: 'Cinzel', serif;
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--stone);
+      margin-top: .5rem;
+      line-height: 1.35
+    }
+
+    .myth__desc {
+      font-size: .92rem;
+      color: var(--stone-dim);
+      margin-top: .55rem;
+      font-weight: 300;
+      line-height: 1.6
+    }
+
+    .myth__foot {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: .5rem;
+      margin-top: .95rem
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .35rem
+    }
+
+    .tag {
+      padding: .18rem .6rem;
+      border-radius: var(--r-pill);
+      border: 1px solid var(--border);
+      font-family: 'Cinzel', serif;
+      font-size: .66rem;
+      letter-spacing: .1em;
+      color: var(--gold);
+      font-weight: 600;
+    }
+
+    .myth__cast {
+      font-size: .78rem;
+      color: var(--ink-25);
+      font-weight: 400
+    }
+
+    .myth__cast span:not(:last-child)::after {
+      content: '·';
+      margin: 0 .3rem
+    }
+
+    /* ── Afterlife ────────────────────────────────────── */
+    .afterlife-intro {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 2.4rem;
+      align-items: center;
+      margin-bottom: 3.2rem
+    }
+
+    .after-img {
+      aspect-ratio: 4/3;
+      border-radius: var(--r);
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+      background: linear-gradient(140deg, #3d332c, #5c5048);
+      position: relative;
+    }
+
+    .after-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: .6;
+      mix-blend-mode: normal;
+    }
+
+    .after-text p {
+      color: var(--stone-dim);
+      font-weight: 300;
+      font-size: 1.02rem;
+      margin-bottom: 1.1rem
+    }
+
+    .after-text strong {
+      color: var(--stone);
+      font-weight: 600
+    }
+
+    /* steps */
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: .95rem
+    }
+
+    .step {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      padding: 1.6rem .9rem 1.4rem;
+      text-align: center;
+      box-shadow: var(--shadow);
+      transition: border-color .3s, transform .3s;
+    }
+
+    .step:hover {
+      border-color: var(--gold);
+      transform: translateY(-2px)
+    }
+
+    .step__icon {
+      width: 48px;
+      height: 48px;
+      margin: 0 auto;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--gold-10), var(--gold-05));
+      border: 2px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+      position: relative;
+    }
+
+    .step__n {
+      position: absolute;
+      top: -7px;
+      right: -7px;
+      width: 21px;
+      height: 21px;
+      border-radius: 50%;
+      background: var(--gold);
+      color: #fff;
+      font-family: 'Cinzel', serif;
+      font-size: .6rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .step h4 {
+      font-family: 'Cinzel', serif;
+      font-size: .84rem;
+      font-weight: 600;
+      color: var(--stone);
+      margin-top: .8rem;
+      line-height: 1.3
+    }
+
+    .step p {
+      font-size: .8rem;
+      color: var(--stone-dim);
+      margin-top: .4rem;
+      font-weight: 300;
+      line-height: 1.5
+    }
+
+    /* ── Culture ──────────────────────────────────────── */
+    .culture {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.3rem
+    }
+
+    .cul-card {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      transition: border-color .3s, box-shadow .3s, transform .3s;
+    }
+
+    .cul-card:hover {
+      border-color: var(--gold);
+      box-shadow: var(--shadow-lg);
+      transform: translateY(-2px)
+    }
+
+    .cul-card[data-t=writing] .cul-img {
+      background: linear-gradient(140deg, #c9a84c, #9a7a38)
+    }
+
+    .cul-card[data-t=pharaoh] .cul-img {
+      background: linear-gradient(140deg, #b89444, #8a6a2d)
+    }
+
+    .cul-card[data-t=temple] .cul-img {
+      background: linear-gradient(140deg, #8a7a5a, #6b5c3d)
+    }
+
+    .cul-card[data-t=art] .cul-img {
+      background: linear-gradient(140deg, #7a6aad, #5c4d8a)
+    }
+
+    .cul-img {
+      position: relative;
+      overflow: hidden;
+      min-height: 180px;
+    }
+
+    .cul-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: .5;
+      mix-blend-mode: normal;
+    }
+
+    .cul-img-icon {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.9rem;
+      opacity: .55;
+    }
+
+    .cul-body {
+      padding: 1.4rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center
+    }
+
+    .cul-label {
+      font-family: 'Cinzel', serif;
+      font-size: .64rem;
+      letter-spacing: .19em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 600
+    }
+
+    .cul-title {
+      font-family: 'Cinzel', serif;
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--stone);
+      margin-top: .28rem
+    }
+
+    .cul-desc {
+      font-size: .86rem;
+      color: var(--stone-dim);
+      margin-top: .45rem;
+      font-weight: 300;
+      line-height: 1.55
+    }
+
+    /* ── Glossary ─────────────────────────────────────── */
+    .glossary-head {
+      text-align: center;
+      margin-bottom: 2.2rem
+    }
+
+    .glossary-head h2 {
+      font-family: 'Cinzel', serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--stone)
+    }
+
+    .glossary-head p {
+      font-size: .93rem;
+      color: var(--stone-dim);
+      margin-top: .35rem;
+      font-weight: 300
+    }
+
+    .gloss {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: .9rem
+    }
+
+    .gloss-item {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--r-sm);
+      padding: .9rem 1.05rem;
+      transition: border-color .25s;
+    }
+
+    .gloss-item:hover {
+      border-color: var(--gold)
+    }
+
+    .gloss-item h4 {
+      font-family: 'Cinzel', serif;
+      font-size: .88rem;
+      font-weight: 600;
+      color: var(--stone)
+    }
+
+    .gloss-item p {
+      font-size: .8rem;
+      color: var(--stone-dim);
+      margin-top: .25rem;
+      font-weight: 300;
+      line-height: 1.5
+    }
+
+    /* ── Footer ───────────────────────────────────────── */
+    footer {
+      background: #000;
+      padding: 3.2rem 0 1.8rem
+    }
+
+    .foot-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 2.2rem
+    }
+
+    .foot-brand h3 {
+      font-family: 'Cinzel', serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: .17em
+    }
+
+    .foot-brand h3 span {
+      color: var(--gold)
+    }
+
+    .foot-brand p {
+      font-size: .85rem;
+      color: rgba(255, 255, 255, .35);
+      margin-top: .55rem;
+      font-weight: 300;
+      max-width: 220px;
+      line-height: 1.6
+    }
+
+    .foot-col h4 {
+      font-family: 'Cinzel', serif;
+      font-size: .66rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 600;
+      margin-bottom: .85rem
+    }
+
+    .foot-col ul {
+      list-style: none
+    }
+
+    .foot-col li {
+      margin-bottom: .42rem
+    }
+
+    .foot-col a {
+      color: rgba(255, 255, 255, .38);
+      font-size: .86rem;
+      transition: color .25s
+    }
+
+    .foot-col a:hover {
+      color: var(--gold-lt)
+    }
+
+    .foot-bottom {
+      margin-top: 2.2rem;
+      padding-top: 1.3rem;
+      border-top: 1px solid rgba(255, 255, 255, .07);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: .4rem;
+    }
+
+    .foot-bottom p {
+      font-size: .75rem;
+      color: rgba(255, 255, 255, .25)
+    }
+
+    /* ── Scroll-reveal ────────────────────────────────── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity .7s ease, transform .7s cubic-bezier(.22, 1, .36, 1)
+    }
+
+    .reveal.vis {
+      opacity: 1;
+      transform: translateY(0)
+    }
+
+    /* ── Scrollbar ────────────────────────────────────── */
+    ::-webkit-scrollbar {
+      width: 5px
+    }
+
+    ::-webkit-scrollbar-track {
+      background: var(--obsidian)
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: var(--gold);
+      border-radius: 3px
+    }
+
+    /* ═══ RESPONSIVE ═══════════════════════════════════ */
+    @media(max-width:1020px) {
+      .gods {
+        grid-template-columns: repeat(2, 1fr)
+      }
+
+      .steps {
+        grid-template-columns: repeat(3, 1fr)
+      }
+    }
+
+    @media(max-width:760px) {
+      nav {
+        padding: .82rem 1.3rem
+      }
+
+      .nav-links {
+        display: none
+      }
+
+      .burger {
+        display: flex
+      }
+
+      .intro-grid {
+        grid-template-columns: 1fr
+      }
+
+      .gods {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+        margin: 0 auto
+      }
+
+      .myths {
+        grid-template-columns: 1fr
+      }
+
+      .afterlife-intro {
+        grid-template-columns: 1fr
+      }
+
+      .steps {
+        grid-template-columns: repeat(2, 1fr)
+      }
+
+      .culture {
+        grid-template-columns: 1fr
+      }
+
+      .cul-card {
+        grid-template-columns: 140px 1fr
+      }
+
+      .gloss {
+        grid-template-columns: 1fr 1fr
+      }
+
+      .foot-grid {
+        grid-template-columns: 1fr 1fr
+      }
+    }
+
+    @media(max-width:480px) {
+      .section {
+        padding: 4rem 0
+      }
+
+      .gods {
+        max-width: 100%
+      }
+
+      .steps {
+        grid-template-columns: 1fr 1fr
+      }
+
+      .cul-card {
+        grid-template-columns: 110px 1fr
+      }
+
+      .cul-img {
+        min-height: 140px
+      }
+
+      .foot-grid {
+        grid-template-columns: 1fr
+      }
+
+      .toc {
+        padding: 1.4rem 1.2rem
+      }
+
+      .gloss {
+        grid-template-columns: 1fr
+      }
+    }
+
+    @media(max-width:360px) {
+      .steps {
+        grid-template-columns: 1fr
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ─── PROGRESS BAR ────────────────────────── -->
+  <div class="progress" id="prog"></div>
+
+  <!-- ─── NAV ──────────────────────────────────── -->
+  <nav id="nav">
+    <a href="#" class="logo">EGY<span>PT</span><span class="logo-tag">Educational Guide</span></a>
+    <ul class="nav-links">
+      <li><a href="#intro" data-s="intro">Introduction</a></li>
+      <li><a href="#gods" data-s="gods">The Gods</a></li>
+      <li><a href="#myths" data-s="myths">Myths</a></li>
+      <li><a href="#afterlife" data-s="afterlife">Afterlife</a></li>
+      <li><a href="#culture" data-s="culture">Culture</a></li>
+    </ul>
+    <div class="burger" onclick="document.getElementById('mob').classList.add('open')">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <!-- ─── MOBILE NAV ───────────────────────────── -->
+  <div class="mobile-nav" id="mob">
+    <button class="close-btn" onclick="document.getElementById('mob').classList.remove('open')">&times;</button>
+    <a href="#intro" onclick="closeMob()">Introduction</a>
+    <a href="#gods" onclick="closeMob()">The Gods</a>
+    <a href="#myths" onclick="closeMob()">Myths</a>
+    <a href="#afterlife" onclick="closeMob()">Afterlife</a>
+    <a href="#culture" onclick="closeMob()">Culture</a>
+  </div>
+
+  <!-- ─── HERO ─────────────────────────────────── -->
+  <section class="hero">
+    <div class="hero__bg"><img src="Images/hero.jpg" alt="Ancient Egypt"></div>
+    <div class="hero__veil"></div>
+    <div class="hero__body">
+      <div class="hero__chip"><span class="hero__chip-dot"></span><span>Educational Guide</span></div>
+      <h1>Ancient Egypt</h1>
+      <p class="hero__sub">Culture, Mythology &amp; Sacred Traditions</p>
+      <p class="hero__desc">A comprehensive guide to understanding one of humanity's greatest civilizations — its gods,
+        myths, and the beliefs that shaped a nation for over three thousand years.</p>
+    </div>
+    <div class="hero__nudge"><span class="hero__nudge-label">Scroll</span>
+      <div class="hero__nudge-line"></div>
+    </div>
+  </section>
+
+  <!-- ─── TABLE OF CONTENTS ────────────────────── -->
+  <section class="toc-wrap">
+    <div class="wrap">
+      <div class="toc">
+        <div class="toc__head">
+          <span class="toc__head-icon">📖</span>
+          <div>
+            <h2>What You'll Learn</h2>
+            <p>Navigate through the chapters of ancient Egyptian civilization</p>
+          </div>
+        </div>
+        <div class="toc__list">
+          <a href="#intro" class="toc__item"><span class="toc__num">01</span><span class="toc__dot"></span>
+            <div class="toc__info">
+              <h4>Introduction to Ancient Egypt</h4>
+              <p>Origins, key facts &amp; the concept of Ma'at</p>
+            </div><span class="toc__arrow">→</span>
+          </a>
+          <a href="#gods" class="toc__item"><span class="toc__num">02</span><span class="toc__dot"></span>
+            <div class="toc__info">
+              <h4>The Gods &amp; Goddesses</h4>
+              <p>Major deities and their roles in Egyptian religion</p>
+            </div><span class="toc__arrow">→</span>
+          </a>
+          <a href="#myths" class="toc__item"><span class="toc__num">03</span><span class="toc__dot"></span>
+            <div class="toc__info">
+              <h4>Sacred Myths &amp; Stories</h4>
+              <p>The great legends that shaped Egyptian belief</p>
+            </div><span class="toc__arrow">→</span>
+          </a>
+          <a href="#afterlife" class="toc__item"><span class="toc__num">04</span><span class="toc__dot"></span>
+            <div class="toc__info">
+              <h4>Journey to the Afterlife</h4>
+              <p>Death, the Duat, judgment &amp; eternal paradise</p>
+            </div><span class="toc__arrow">→</span>
+          </a>
+          <a href="#culture" class="toc__item"><span class="toc__num">05</span><span class="toc__dot"></span>
+            <div class="toc__info">
+              <h4>Egyptian Culture</h4>
+              <p>Writing, pharaohs, architecture &amp; sacred art</p>
+            </div><span class="toc__arrow">→</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ CHAPTER 01 — INTRODUCTION ════════════════════ -->
+  <section class="section" id="intro">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="sec-label">Chapter 01</p>
+        <h2 class="sec-title">Introduction to Ancient Egypt</h2>
+        <p class="sec-desc">Understanding the foundations of one of the world's oldest and most complex civilizations.
+        </p>
+        <div class="divider"></div>
+      </div>
+
+      <div class="intro-grid">
+        <!-- left text -->
+        <div class="intro-text reveal">
+          <p>Ancient Egypt, known to its people as <strong>Kemet</strong> (meaning "The Black Land," a reference to the
+            rich, dark soil deposited by the Nile's annual floods), was a civilization that thrived for over 3,000 years
+            in northeastern Africa.</p>
+          <p>At its core was the concept of <strong>Ma'at</strong> — truth, justice, harmony, and cosmic balance.
+            Everything in Egyptian society, from the way pharaohs ruled to the way ordinary people lived, was guided by
+            the pursuit of Ma'at. It was both a goddess and an idea.</p>
+          <p>Religion was not separate from daily life — it <em>was</em> daily life. Gods governed the sun, the floods,
+            death, love, and every force of nature. Priests maintained temples, performed rituals, and served as the
+            bridge between the mortal world and the divine.</p>
+          <p>The civilization left an extraordinary legacy: monumental architecture, a sophisticated writing system,
+            complex religious beliefs, and a rich tradition of art and storytelling that continues to fascinate the
+            world today.</p>
+        </div>
+
+        <!-- right sidebar -->
+        <div class="sidebar reveal">
+          <div class="facts">
+            <p class="facts__head">📊 Key Facts</p>
+            <div class="fact"><span class="fact__lbl">Active Period</span><span class="fact__val">3100 – 30 BCE</span>
+            </div>
+            <div class="fact"><span class="fact__lbl">Total Duration</span><span class="fact__val">≈ 3,100 Years</span>
+            </div>
+            <div class="fact"><span class="fact__lbl">Location</span><span class="fact__val">North-East Africa</span>
+            </div>
+            <div class="fact"><span class="fact__lbl">Known Gods</span><span class="fact__val">1,500+</span></div>
+            <div class="fact"><span class="fact__lbl">Royal Dynasties</span><span class="fact__val">30</span></div>
+            <div class="fact"><span class="fact__lbl">Writing System</span><span class="fact__val">Hieroglyphics</span>
+            </div>
+          </div>
+
+          <div class="callout">
+            <span class="callout__icon">💡</span>
+            <div class="callout__body">
+              <h4>Did You Know?</h4>
+              <p>Ancient Egypt had over <strong>1,500 named deities</strong>, making it one of the most complex
+                religious systems in all of human history.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ CHAPTER 02 — THE GODS ════════════════════════ -->
+  <section class="section section--white" id="gods">
+    <div class="wrap">
+      <div class="sec-head sec-head--center">
+        <p class="sec-label">Chapter 02</p>
+        <h2 class="sec-title">The Gods &amp; Goddesses</h2>
+        <p class="sec-desc">Egyptian gods took many forms — human, animal, or a blend of both. Each deity ruled a domain
+          and played a role in daily life. Tap <strong>Learn More</strong> on any card to explore deeper.</p>
+        <div class="divider"></div>
+      </div>
+
+      <div class="gods">
+        <!-- Ra -->
+        <div class="god reveal" data-id="ra">
+          <div class="god__img"><img src="Images/ra.jpg" alt="Ra">
+            <div class="god__overlay"><span class="god__symbol">☀️</span><span class="god__img-label">Ra</span></div>
+          </div>
+          <div class="god__body">
+            <h3 class="god__name">Ra</h3><span class="god__role">God of the Sun &amp; Creation</span>
+            <p class="god__desc">The king of the gods, Ra sailed across the sky each day in his solar barque, giving
+              light and life to the entire world.</p>
+            <button class="god__toggle" onclick="toggleCard(this)"><span>Learn More</span><span
+                class="t-icon">+</span></button>
+            <div class="god__more">
+              <div class="god__more-inner">
+                <h5>Sacred Symbols</h5>
+                <p>Solar disk, falcon head, and the lotus flower were Ra's primary symbols in art and ritual.</p>
+                <h5>Why He Matters</h5>
+                <p>Ra was the father of all gods. Every night he traveled through the underworld battling the serpent
+                  Apophis — representing the eternal cycle of life and death. His survival each dawn gave Egyptians hope
+                  that order would always prevail.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Osiris -->
+        <div class="god reveal" data-id="osiris">
+          <div class="god__img"><img src="Images/osiris.jpg" alt="Osiris">
+            <div class="god__overlay"><span class="god__symbol">🌿</span><span class="god__img-label">Osiris</span>
+            </div>
+          </div>
+          <div class="god__body">
+            <h3 class="god__name">Osiris</h3><span class="god__role">Lord of the Underworld</span>
+            <p class="god__desc">The god of death and resurrection, Osiris ruled over the afterlife and served as the
+              judge of every soul that entered the Duat.</p>
+            <button class="god__toggle" onclick="toggleCard(this)"><span>Learn More</span><span
+                class="t-icon">+</span></button>
+            <div class="god__more">
+              <div class="god__more-inner">
+                <h5>Sacred Symbols</h5>
+                <p>Green skin representing fertility and rebirth, and the crook and flail — two symbols of kingship he
+                  held in his wrapped hands.</p>
+                <h5>Why He Matters</h5>
+                <p>Osiris was murdered and dismembered by his brother Set, then resurrected by Isis. His story became
+                  the foundation of Egyptian belief in life after death — proving even death could be overcome.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Isis -->
+        <div class="god reveal" data-id="isis">
+          <div class="god__img"><img src="Images/isis.jpg" alt="Isis">
+            <div class="god__overlay"><span class="god__symbol">✨</span><span class="god__img-label">Isis</span></div>
+          </div>
+          <div class="god__body">
+            <h3 class="god__name">Isis</h3><span class="god__role">Goddess of Magic &amp; Motherhood</span>
+            <p class="god__desc">The most powerful sorceress in the pantheon, Isis was the protector of mothers,
+              children, and the home across all of Egypt.</p>
+            <button class="god__toggle" onclick="toggleCard(this)"><span>Learn More</span><span
+                class="t-icon">+</span></button>
+            <div class="god__more">
+              <div class="god__more-inner">
+                <h5>Sacred Symbols</h5>
+                <p>A throne hieroglyph on her headdress, and later, wings that symbolised divine protection over the
+                  living and the dead.</p>
+                <h5>Why She Matters</h5>
+                <p>Isis reassembled Osiris and gave birth to Horus. Her cult eventually spread from Egypt to Greece,
+                  Rome, and beyond — one of the ancient world's longest-lasting religious traditions.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Anubis -->
+        <div class="god reveal" data-id="anubis">
+          <div class="god__img"><img src="Images/anubis.jpg" alt="Anubis">
+            <div class="god__overlay"><span class="god__symbol">🐺</span><span class="god__img-label">Anubis</span>
+            </div>
+          </div>
+          <div class="god__body">
+            <h3 class="god__name">Anubis</h3><span class="god__role">Protector of the Dead</span>
+            <p class="god__desc">The jackal-headed guardian who guided souls through the underworld and oversaw the
+              sacred rituals of mummification.</p>
+            <button class="god__toggle" onclick="toggleCard(this)"><span>Learn More</span><span
+                class="t-icon">+</span></button>
+            <div class="god__more">
+              <div class="god__more-inner">
+                <h5>Sacred Symbols</h5>
+                <p>The jackal (or dog) head and the was-scepter, a staff representing power and authority over the dead.
+                </p>
+                <h5>Why He Matters</h5>
+                <p>Anubis presided over the critical "Weighing of the Heart" ceremony — the moment that decided whether
+                  a soul entered paradise or was destroyed forever.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Horus -->
+        <div class="god reveal" data-id="horus">
+          <div class="god__img"><img src="Images/horus.jpg" alt="Horus">
+            <div class="god__overlay"><span class="god__symbol">🦅</span><span class="god__img-label">Horus</span></div>
+          </div>
+          <div class="god__body">
+            <h3 class="god__name">Horus</h3><span class="god__role">God of Sky &amp; Kingship</span>
+            <p class="god__desc">The falcon-headed son of Osiris and Isis, Horus represented the divine authority and
+              protection of every pharaoh who ruled Egypt.</p>
+            <button class="god__toggle" onclick="toggleCard(this)"><span>Learn More</span><span
+                class="t-icon">+</span></button>
+            <div class="god__more">
+              <div class="god__more-inner">
+                <h5>Sacred Symbols</h5>
+                <p>The Eye of Horus (Wedjat) — one of the most recognised symbols in ancient Egypt, representing
+                  protection, healing, and restoration.</p>
+                <h5>Why He Matters</h5>
+                <p>After defeating Set in a contest lasting 80 years, Horus became the first divine pharaoh. Every
+                  living king was considered an incarnation of Horus on Earth.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Thoth -->
+        <div class="god reveal" data-id="thoth">
+          <div class="god__img"><img src="Images/thoth.jpg" alt="Thoth">
+            <div class="god__overlay"><span class="god__symbol">📜</span><span class="god__img-label">Thoth</span></div>
+          </div>
+          <div class="god__body">
+            <h3 class="god__name">Thoth</h3><span class="god__role">God of Writing &amp; Knowledge</span>
+            <p class="god__desc">The ibis-headed scribe of the gods, Thoth invented hieroglyphics, measured time, and
+              kept a record of every soul's deeds.</p>
+            <button class="god__toggle" onclick="toggleCard(this)"><span>Learn More</span><span
+                class="t-icon">+</span></button>
+            <div class="god__more">
+              <div class="god__more-inner">
+                <h5>Sacred Symbols</h5>
+                <p>The ibis bird, the baboon, and the scribe's palette were all sacred to Thoth — each representing
+                  knowledge and truth.</p>
+                <h5>Why He Matters</h5>
+                <p>Thoth recorded the result of the Weighing of the Heart and maintained cosmic balance. Without him,
+                  the gods' actions and the universe itself would fall into chaos.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div><!-- /gods -->
+
+      <div class="callout reveal" style="margin-top:1.8rem">
+        <span class="callout__icon">💡</span>
+        <div class="callout__body">
+          <h4>Did You Know?</h4>
+          <p>Gods in ancient Egypt often merged with one another over time. Ra combined with Amun to become
+            <strong>Amun-Ra</strong>, "King of the Gods." This blending reflected how Egyptian religion evolved and
+            adapted across 3,000 years of history.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ CHAPTER 03 — SACRED MYTHS ════════════════════ -->
+  <section class="section" id="myths">
+    <div class="wrap">
+      <div class="sec-head sec-head--center">
+        <p class="sec-label">Chapter 03</p>
+        <h2 class="sec-title">Sacred Myths &amp; Stories</h2>
+        <p class="sec-desc">These stories were not just tales — they explained how the world worked, why death existed,
+          and how order was kept in the universe.</p>
+        <div class="divider"></div>
+      </div>
+
+      <div class="myths">
+        <div class="myth reveal">
+          <div class="myth__num">01</div>
+          <h3 class="myth__title">The Death &amp; Resurrection of Osiris</h3>
+          <p class="myth__desc">Driven by jealousy, Set murdered his brother Osiris and scattered the body across Egypt.
+            Isis gathered every piece and used her immense magical power to bring him back — making Osiris the eternal
+            king of the underworld and the promise of life after death.</p>
+          <div class="myth__foot">
+            <div class="tags"><span class="tag">Death &amp; Rebirth</span><span class="tag">Family</span></div>
+            <div class="myth__cast"><span>Osiris</span><span>Isis</span><span>Set</span></div>
+          </div>
+        </div>
+
+        <div class="myth reveal">
+          <div class="myth__num">02</div>
+          <h3 class="myth__title">Ra's Nightly Battle with Apophis</h3>
+          <p class="myth__desc">Every night, the sun god descended into the Duat where the massive serpent Apophis —
+            embodiment of chaos — waited to devour him and stop the sun from rising. Ra and his allies fought and
+            defeated Apophis each night, ensuring the dawn would come again.</p>
+          <div class="myth__foot">
+            <div class="tags"><span class="tag">Cosmic Order</span><span class="tag">Good vs Evil</span></div>
+            <div class="myth__cast"><span>Ra</span><span>Apophis</span></div>
+          </div>
+        </div>
+
+        <div class="myth reveal">
+          <div class="myth__num">03</div>
+          <h3 class="myth__title">Horus vs. Set — Battle for the Throne</h3>
+          <p class="myth__desc">After Osiris was murdered, young Horus challenged Set for the throne of Egypt. Their
+            conflict involved magical contests, physical battles, and cunning tricks — and lasted 80 years. Horus
+            ultimately won and became the first divine pharaoh to rule.</p>
+          <div class="myth__foot">
+            <div class="tags"><span class="tag">Justice</span><span class="tag">Power</span></div>
+            <div class="myth__cast"><span>Horus</span><span>Set</span><span>Isis</span></div>
+          </div>
+        </div>
+
+        <div class="myth reveal">
+          <div class="myth__num">04</div>
+          <h3 class="myth__title">The Eye of Ra — Rage &amp; Restoration</h3>
+          <p class="myth__desc">Ra sent his Eye — manifested as the fierce goddess Sekhmet — to punish disobedient
+            humans. Sekhmet entered a destructive fury threatening all life. The gods tricked her by creating a potion
+            she mistook for blood, ending her rampage and restoring balance.</p>
+          <div class="myth__foot">
+            <div class="tags"><span class="tag">Protection</span><span class="tag">Balance</span></div>
+            <div class="myth__cast"><span>Ra</span><span>Sekhmet</span></div>
+          </div>
+        </div>
+
+        <div class="myth reveal">
+          <div class="myth__num">05</div>
+          <h3 class="myth__title">The Creation of the World</h3>
+          <p class="myth__desc">In the beginning there was only Nun — the vast primordial waters. From these waters the
+            god Atum rose upon the first mound of earth. He created the world through thought and speech, birthing Shu
+            and Tefnut, from whom all gods and all life descended.</p>
+          <div class="myth__foot">
+            <div class="tags"><span class="tag">Creation</span><span class="tag">Origins</span></div>
+            <div class="myth__cast"><span>Atum</span><span>Shu</span><span>Tefnut</span></div>
+          </div>
+        </div>
+
+        <div class="myth reveal">
+          <div class="myth__num">06</div>
+          <h3 class="myth__title">Isis &amp; the Secret Name of Ra</h3>
+          <p class="myth__desc">Every god had a secret, true name — the source of their power. Isis cleverly tricked the
+            aging Ra into revealing his. This act cemented her role as the supreme goddess of magic, granting her
+            authority that even the other gods could not challenge.</p>
+          <div class="myth__foot">
+            <div class="tags"><span class="tag">Cunning</span><span class="tag">Power</span></div>
+            <div class="myth__cast"><span>Isis</span><span>Ra</span></div>
+          </div>
+        </div>
+      </div><!-- /myths -->
+
+      <div class="callout reveal" style="margin-top:1.8rem">
+        <span class="callout__icon">💡</span>
+        <div class="callout__body">
+          <h4>Did You Know?</h4>
+          <p>Many of these myths were told orally for centuries before being written down. The earliest written versions
+            appear in the <strong>Pyramid Texts</strong> (around 2400 BCE), followed by the <strong>Coffin
+              Texts</strong> and, most famously, the <strong>Book of the Dead</strong> (from about 1550 BCE onward).</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ CHAPTER 04 — AFTERLIFE ═══════════════════════ -->
+  <section class="section section--white" id="afterlife">
+    <div class="wrap">
+      <div class="sec-head sec-head--center">
+        <p class="sec-label">Chapter 04</p>
+        <h2 class="sec-title">Journey to the Afterlife</h2>
+        <p class="sec-desc">The Egyptians believed that death was not an ending — but a transition. The soul had to pass
+          through trials to reach eternal paradise.</p>
+        <div class="divider"></div>
+      </div>
+
+      <!-- intro block -->
+      <div class="afterlife-intro reveal">
+        <div class="after-img"><img src="Images/afterlife.jpg" alt="Egyptian Afterlife"></div>
+        <div class="after-text">
+          <p>Every person was believed to possess several parts of the soul: the <strong>Ka</strong> (life force that
+            stayed in the tomb), the <strong>Ba</strong> (personality that travelled to the afterlife), and the
+            <strong>Akh</strong> (the spirit that achieved immortality). For true eternal life, these parts had to
+            reunite.
+          </p>
+          <p>The journey through the <strong>Duat</strong> (underworld) was dangerous. Gates guarded by knife-wielding
+            demons blocked the path. The dead relied on prayers from the living and spells from the <em>Book of the
+              Dead</em> to survive.</p>
+          <div class="callout">
+            <span class="callout__icon">💡</span>
+            <div class="callout__body">
+              <h4>Did You Know?</h4>
+              <p>The <strong>Book of the Dead</strong> was not a single fixed text. It was a personalised collection of
+                spells, often written on papyrus and buried with the deceased as a practical guide to the next world.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5 steps -->
+      <div class="steps reveal">
+        <div class="step">
+          <div class="step__icon">💀<span class="step__n">01</span></div>
+          <h4>Death &amp; Departure</h4>
+          <p>The soul separates from the body and begins its journey into the Duat, the realm of the dead.</p>
+        </div>
+        <div class="step">
+          <div class="step__icon">⚱️<span class="step__n">02</span></div>
+          <h4>Mummification</h4>
+          <p>Priests preserved the body through sacred rituals. A proper burial was essential for the soul to find its
+            way back.</p>
+        </div>
+        <div class="step">
+          <div class="step__icon">🛶<span class="step__n">03</span></div>
+          <h4>Crossing the Duat</h4>
+          <p>The soul boarded Ra's barque for a dangerous 12-hour voyage through the underworld, past demons and gate
+            guardians.</p>
+        </div>
+        <div class="step">
+          <div class="step__icon">⚖️<span class="step__n">04</span></div>
+          <h4>Weighing of the Heart</h4>
+          <p>In the Hall of Two Truths, Anubis weighed the soul's heart against the feather of Ma'at. A pure heart
+            passed; an impure one was devoured by Ammit.</p>
+        </div>
+        <div class="step">
+          <div class="step__icon">🌅<span class="step__n">05</span></div>
+          <h4>Entry to Aaru</h4>
+          <p>The justified soul entered the <strong>Field of Reeds</strong> — an eternal paradise of rivers, trees, and
+            peace, a reflection of life on Earth.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ CHAPTER 05 — CULTURE ═════════════════════════ -->
+  <section class="section" id="culture">
+    <div class="wrap">
+      <div class="sec-head sec-head--center">
+        <p class="sec-label">Chapter 05</p>
+        <h2 class="sec-title">Egyptian Culture</h2>
+        <p class="sec-desc">Religion influenced every part of Egyptian life — how they wrote, governed, built, and
+          expressed themselves through art.</p>
+        <div class="divider"></div>
+      </div>
+
+      <div class="culture">
+        <div class="cul-card reveal" data-t="writing">
+          <div class="cul-img"><img src="Images/writing.jpg" alt="Hieroglyphics">
+            <div class="cul-img-icon">📜</div>
+          </div>
+          <div class="cul-body">
+            <span class="cul-label">Writing System</span>
+            <h3 class="cul-title">Hieroglyphics</h3>
+            <p class="cul-desc">Egypt's sacred script used over 700 symbols to represent sounds, words, and ideas.
+              Carved into temple walls and painted on papyrus, hieroglyphics preserved stories and laws for millennia.
+              They remained a mystery for over 1,400 years until the Rosetta Stone was discovered in 1799.</p>
+          </div>
+        </div>
+
+        <div class="cul-card reveal" data-t="pharaoh">
+          <div class="cul-img"><img src="Images/pharaoh.jpg" alt="Pharaohs">
+            <div class="cul-img-icon">👑</div>
+          </div>
+          <div class="cul-body">
+            <span class="cul-label">Governance</span>
+            <h3 class="cul-title">The Pharaohs</h3>
+            <p class="cul-desc">Pharaohs were not just kings — they were considered living gods. Each pharaoh was the
+              embodiment of Horus during life and became Osiris after death. Their duty was to maintain Ma'at: justice,
+              order, and cosmic harmony for the entire nation.</p>
+          </div>
+        </div>
+
+        <div class="cul-card reveal" data-t="temple">
+          <div class="cul-img"><img src="Images/temple.jpg" alt="Temples">
+            <div class="cul-img-icon">🏛️</div>
+          </div>
+          <div class="cul-body">
+            <span class="cul-label">Architecture</span>
+            <h3 class="cul-title">Temples &amp; Pyramids</h3>
+            <p class="cul-desc">Temples were built as homes for the gods, housing sacred statues and functioning as
+              centres of worship and learning. Pyramids served as tombs for pharaohs — designed to protect the king's
+              body and provisions for all of eternity. The Great Pyramid of Giza remains one of the Seven Wonders.</p>
+          </div>
+        </div>
+
+        <div class="cul-card reveal" data-t="art">
+          <div class="cul-img"><img src="Images/art.jpg" alt="Egyptian Art">
+            <div class="cul-img-icon">🎨</div>
+          </div>
+          <div class="cul-body">
+            <span class="cul-label">Art &amp; Expression</span>
+            <h3 class="cul-title">Sacred Art</h3>
+            <p class="cul-desc">Egyptian art followed strict rules — figures were drawn in a specific style to show
+              their role and importance. Art was not made purely for beauty; it was a form of communication with the
+              gods, a way to record rituals, and a method of preserving truth for all of time.</p>
+          </div>
+        </div>
+      </div><!-- /culture -->
+
+      <div class="callout reveal" style="margin-top:1.8rem">
+        <span class="callout__icon">💡</span>
+        <div class="callout__body">
+          <h4>Did You Know?</h4>
+          <p>Hieroglyphics were a mystery for over 1,400 years after the fall of ancient Egypt. It took the discovery of
+            the <strong>Rosetta Stone</strong> in 1799 and the work of scholar Jean-François Champollion in 1822 to
+            finally crack the code and read what the Egyptians had written.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ GLOSSARY ═════════════════════════════════════ -->
+  <section class="section section--white">
+    <div class="wrap">
+      <div class="glossary-head reveal">
+        <h2>📖 Key Terms Glossary</h2>
+        <p>Essential words and concepts to know about ancient Egypt</p>
+      </div>
+      <div class="gloss">
+        <div class="gloss-item reveal">
+          <h4>Ma'at</h4>
+          <p>The Egyptian principle of truth, justice, harmony, and cosmic balance. Maintaining Ma'at was the duty of
+            the pharaohs and the gods alike.</p>
+        </div>
+        <div class="gloss-item reveal">
+          <h4>Duat</h4>
+          <p>The Egyptian underworld — the dangerous realm the soul must travel through after death before reaching
+            paradise or destruction.</p>
+        </div>
+        <div class="gloss-item reveal">
+          <h4>Ka</h4>
+          <p>The "life force" — one part of the soul believed to remain in the tomb after death, needing food and
+            offerings to survive.</p>
+        </div>
+        <div class="gloss-item reveal">
+          <h4>Ba</h4>
+          <p>The "personality" — the part of the soul that travelled into the afterlife, often depicted as a
+            human-headed bird.</p>
+        </div>
+        <div class="gloss-item reveal">
+          <h4>Akh</h4>
+          <p>The "spirit" — the immortal form achieved when Ka and Ba reunited successfully in the afterlife.</p>
+        </div>
+        <div class="gloss-item reveal">
+          <h4>Heka</h4>
+          <p>Magic — a fundamental divine force used by gods and priests to maintain order, heal, protect, and shape the
+            universe.</p>
+        </div>
+        <div class="gloss-item reveal">
+          <h4>Papyrus</h4>
+          <p>A writing material made from reeds of the Nile. The Book of the Dead and many sacred texts were recorded on
+            papyrus scrolls.</p>
+        </div>
+        <div class="gloss-item reveal">
+          <h4>Aaru</h4>
+          <p>The "Field of Reeds" — the Egyptian paradise, an eternal mirror of life on Earth where the righteous soul
+            lived forever.</p>
+        </div>
+        <div class="gloss-item reveal">
+          <h4>Kemet</h4>
+          <p>The ancient Egyptian name for Egypt itself, meaning "The Black Land" — referencing the fertile dark soil
+            deposited each year by the Nile.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ FOOTER ═══════════════════════════════════════ -->
+  <footer>
+    <div class="wrap">
+      <div class="foot-grid">
+        <div class="foot-brand">
+          <h3>EGY<span>PT</span></h3>
+          <p>An educational guide exploring the gods, myths, and sacred traditions of ancient Egyptian civilization.</p>
+        </div>
+        <div class="foot-col">
+          <h4>Chapters</h4>
+          <ul>
+            <li><a href="#intro">Introduction</a></li>
+            <li><a href="#gods">The Gods</a></li>
+            <li><a href="#myths">Sacred Myths</a></li>
+            <li><a href="#afterlife">The Afterlife</a></li>
+            <li><a href="#culture">Egyptian Culture</a></li>
+          </ul>
+        </div>
+        <div class="foot-col">
+          <h4>Topics</h4>
+          <ul>
+            <li><a href="#gods">Divine Pantheon</a></li>
+            <li><a href="#myths">Creation Stories</a></li>
+            <li><a href="#afterlife">Book of the Dead</a></li>
+            <li><a href="#culture">Hieroglyphics</a></li>
+            <li><a href="#culture">The Pharaohs</a></li>
+          </ul>
+        </div>
+        <div class="foot-col">
+          <h4>References</h4>
+          <ul>
+            <li><a href="https://www.britishmuseum.org" target="_blank">British Museum</a></li>
+            <li><a href="https://egyptian.museum" target="_blank">Egyptian Museum, Cairo</a></li>
+            <li><a href="https://www.metmuseum.org" target="_blank">The Metropolitan Museum</a></li>
+            <li><a href="https://www.worldhistory.org" target="_blank">World History Encyclopedia</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="foot-bottom">
+        <p>© 2026 EGYPT Educational Guide. Created for educational purposes.</p>
+        <p>All content is for learning and informational use only.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══ SCRIPTS ═════════════════════════════════════ -->
+  <script>
+    /* progress bar */
+    const prog = document.getElementById('prog');
+    window.addEventListener('scroll', () => {
+      const s = window.scrollY;
+      const d = document.documentElement.scrollHeight - innerHeight;
+      prog.style.width = (s / d * 100) + '%';
+    }, { passive: true });
+
+    /* nav compact on scroll */
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 50) }, { passive: true });
+
+    /* active nav link */
+    const sections = document.querySelectorAll('section[id]');
+    const links = document.querySelectorAll('.nav-links a[data-s]');
+    window.addEventListener('scroll', () => {
+      let cur = '';
+      sections.forEach(el => {
+        if (window.scrollY >= el.offsetTop - 130) cur = el.id;
+      });
+      links.forEach(a => { a.classList.toggle('active', a.dataset.s === cur) });
+    }, { passive: true });
+
+    /* scroll reveal with sibling stagger */
+    const revEls = document.querySelectorAll('.reveal');
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (!e.isIntersecting) return;
+        const siblings = e.target.parentElement.querySelectorAll('.reveal');
+        let i = 0; siblings.forEach((s, idx) => { if (s === e.target) i = idx });
+        setTimeout(() => e.target.classList.add('vis'), i * 72);
+        obs.unobserve(e.target);
+      });
+    }, { threshold: .12, rootMargin: '0px 0px -30px 0px' });
+    revEls.forEach(el => obs.observe(el));
+
+    /* god card expand / collapse */
+    function toggleCard(btn) {
+      const card = btn.closest('.god');
+      const isOpen = card.classList.contains('open');
+      card.classList.toggle('open');
+      btn.querySelector('span:first-child').textContent = isOpen ? 'Learn More' : 'Show Less';
+    }
+
+    /* smooth anchor */
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const t = document.querySelector(a.getAttribute('href'));
+        if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth', block: 'start' }) }
+      });
+    });
+
+    /* mobile close */
+    function closeMob() { document.getElementById('mob').classList.remove('open') }
+  </script>
+</body>
+
+</html>
